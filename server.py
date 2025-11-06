@@ -88,8 +88,8 @@ def send_sms(ToPhoneNumber: str, Body: str) -> str:
 # -------------------------------
 # MCP HTTP & SSE
 # -------------------------------
-mcp_http_app = mcp.http_app(path="/mcp")
-mcp_sse_app = mcp.sse_app(path="/sse")
+mcp_http_app = mcp.http_app()
+mcp_sse_app = mcp.sse_app()
 
 # -------------------------------
 # FastAPI

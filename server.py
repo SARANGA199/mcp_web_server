@@ -88,8 +88,8 @@ def send_sms(ToPhoneNumber: str, Body: str) -> str:
 # -------------------------------
 # MCP HTTP & SSE
 # -------------------------------
-mcp_http_app = mcp.http_app()
-mcp_sse_app = mcp.sse_app()
+mcp_http_app = mcp.http_app(path="/mcp")
+mcp_sse_app = mcp.sse_app(path="/sse")
 
 # -------------------------------
 # FastAPI
@@ -98,8 +98,8 @@ app = FastAPI(title="My Unified API + MCP Server",
               lifespan=mcp_http_app.lifespan)
 
 # ✅ Correct mounting for both HTTP and SSE
-app.mount("/mcp", mcp_http_app)
-app.mount("/sse", mcp_sse_app)
+app.mount("/mcp-app", mcp_http_app)
+app.mount("/sse-app", mcp_sse_app)
 
 # -------------------------------
 # Example REST routes

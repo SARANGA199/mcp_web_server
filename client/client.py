@@ -2,7 +2,8 @@ import asyncio
 from fastmcp import Client
 
 # client = Client("http://localhost:8000/analytics/mcp")
-client = Client("https://psh-test-server.fastmcp.app/mcp")
+# client = Client("https://psh-test-server.fastmcp.app/mcp")
+client = Client("https://web-psh-server.fastmcp.app/mcp")
 
 
 async def call_tool(name: str):
@@ -27,7 +28,7 @@ async def test_send_sms():
     async with client:
         result = await client.call_tool("send_sms", {
             "ToPhoneNumber": "+19495942405",
-            "Body": "Hello from  test 9.57 AM "
+            "Body": "Hello from  test 4.28 PM "
         })
         print(result.structured_content["result"])
 

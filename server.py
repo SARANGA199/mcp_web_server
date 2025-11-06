@@ -98,8 +98,8 @@ app = FastAPI(title="My Unified API + MCP Server",
               lifespan=mcp_http_app.lifespan)
 
 # ✅ Correct mounting for both HTTP and SSE
-app.mount("/mcp-app", mcp_http_app)
-app.mount("/sse-app", mcp_sse_app)
+app.mount("/mcp", mcp_http_app)
+app.mount("/sse", mcp_sse_app)
 
 # -------------------------------
 # Example REST routes
